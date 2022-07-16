@@ -1,4 +1,4 @@
-### FindMe
+### Khoj
 This is an attendance tracker system which uses facial recognition technology for the same purpose.
 ### Tech Stack:
 - Firebase, Providing RealTime DataBase and allowing user authentication
@@ -18,7 +18,7 @@ This is an attendance tracker system which uses facial recognition technology fo
 ### A small demonstration of workflow can be found here
 ### Local Setup
 - Copy This Link
-avanish-58/FindMe: Android App to find Missing Persons Using Face recognition , Technologies used-Firebase Real Time Data Base and Skybiometry Api (github.com)
+anurag-crypto/Khoj-App: Android App to find Missing Persons Using Face recognition , Technologies used-Firebase Real Time Data Base and Skybiometry Api (github.com)
  
 - Open Your Android Studio
 - Click On File->new->project from version control->Git

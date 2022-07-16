@@ -1,4 +1,4 @@
-package com.example.findme;
+package com.example.khoj;
 
 public class nya {
     String uid,confidence;

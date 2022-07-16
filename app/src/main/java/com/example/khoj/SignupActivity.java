@@ -1,4 +1,4 @@
-package com.example.findme;
+package com.example.khoj;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,36 +16,36 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class loginactivity extends AppCompatActivity {
-    EditText email;
-    EditText Pass;
-    Button signup;
-    Button Login;
-    FirebaseAuth maAuth;
+public class SignupActivity extends AppCompatActivity {
+EditText email;
+EditText Pass;
+Button signup;
+Button Login;
+FirebaseAuth maAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_loginactivity);
+        setContentView(R.layout.activity_signup);
         email= (EditText)findViewById(R.id.email);
         Pass=(EditText)findViewById(R.id.password);
         signup=(Button)findViewById(R.id.signup);
         Login=(Button)findViewById(R.id.login);
         maAuth=FirebaseAuth.getInstance();
-
-        Login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                btnlogin();
-            }
-        });
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(loginactivity.this,SignupActivity.class));
+                createuser();
+                startActivity(new Intent(SignupActivity.this,loginactivity.class));
+            }
+        });
+        Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SignupActivity.this,loginactivity.class));
             }
         });
     }
-    private void btnlogin(){
+    private void createuser(){
         String mail=email.getText().toString().trim();
         String password=Pass.getText().toString().trim();
         if(TextUtils.isEmpty(mail)){
@@ -57,19 +57,17 @@ public class loginactivity extends AppCompatActivity {
             Pass.requestFocus();
         }
         else{
-            maAuth.signInWithEmailAndPassword(mail,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            maAuth.createUserWithEmailAndPassword(mail,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
-                        Toast.makeText(loginactivity.this, "Login Successfull", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(loginactivity.this,MainActivity.class));
+                        Toast.makeText(SignupActivity.this,"Registration Successfull",Toast.LENGTH_SHORT).show();
                     }
                     else{
-                        Toast.makeText(loginactivity.this, "Login failed"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignupActivity.this,"Registration error "+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                     }
                 }
             });
         }
     }
-
 }

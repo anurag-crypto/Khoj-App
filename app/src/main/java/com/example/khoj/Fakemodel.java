@@ -1,4 +1,4 @@
-package com.example.findme;
+package com.example.khoj;
 
 public class Fakemodel {
     String url, name, place,phone,age;

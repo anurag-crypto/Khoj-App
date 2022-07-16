@@ -1,4 +1,4 @@
-package com.example.findme;
+package com.example.khoj;
 
 import org.junit.Test;
 

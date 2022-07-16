@@ -1,4 +1,4 @@
-package com.example.findme;
+package com.example.khoj;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

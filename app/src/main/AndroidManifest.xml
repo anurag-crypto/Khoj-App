@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.findme">
+    package="com.example.khoj">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -18,19 +18,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FindME">
         <activity
-            android:name=".FindActivity"
+            android:name="com.example.khoj.FindActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterMissing"
+            android:name="com.example.khoj.RegisterMissing"
             android:exported="false" />
         <activity
-            android:name=".SignupActivity"
+            android:name="com.example.khoj.SignupActivity"
             android:exported="false" />
         <activity
-            android:name=".loginactivity"
+            android:name="com.example.khoj.loginactivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.khoj.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
